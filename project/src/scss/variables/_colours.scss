@@ -1,0 +1,35 @@
+@function ninth($num, $part:null) {
+  $multiple: $num - 1;
+  $base: 35 + ((210 / 8) * $multiple);
+
+  @if ($part == r) {
+    @return $base + (($base - 130) / 10);
+  }
+  @else if ($part == g) {
+    @return $base + (($base - 160) / 15);
+  }
+  @else if ($part == b) {
+    @return $base - (($base - 200) / 7);
+  }
+
+  @return $base;
+}
+
+$grey-10: rgb(ninth(1, r), ninth(1, g), ninth(1, b));
+$grey-20: rgb(ninth(2, r), ninth(2, g), ninth(2, b));
+$grey-30: rgb(ninth(3, r), ninth(3, g), ninth(3, b));
+$grey-40: rgb(ninth(4, r), ninth(4, g), ninth(4, b));
+$grey-50: rgb(ninth(5, r), ninth(5, g), ninth(5, b));
+$grey-60: rgb(ninth(6, r), ninth(6, g), ninth(6, b));
+$grey-70: rgb(ninth(7, r), ninth(7, g), ninth(7, b));
+$grey-80: rgb(ninth(8, r), ninth(8, g), ninth(8, b));
+$grey-90: rgb(ninth(9, r), ninth(9, g), ninth(9, b));
+
+$light-bg:  $grey-50;
+$light-clr: $grey-30;
+
+$main-bg:   $grey-30;
+$main-clr:  $grey-70;
+
+$dark-bg:   $grey-20;
+$dark-clr:  $grey-50;
