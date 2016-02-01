@@ -13,8 +13,9 @@
     "scripts:watch": "npm run setup:scripts && watchify --debug project/src/es6/entry/*.js --transform babelify --outfile project/dist/scripts/main.js",
 
     "sass":          "node-sass --output project/dist/styles/ project/src/scss/main.scss",
+    "sass:debug":    "npm run sass -- --source-map true --sourceMapEmbed true --sourceMapContents true",
     "autoprefixer":  "postcss --use autoprefixer --output project/dist/styles/main.css project/dist/styles/main.css",
-    "styles:watch":  "npm run setup:styles && npm run sass -- --source-map true && npm run sass -- --source-map true --watch",
+    "styles:watch":  "npm run setup:styles && npm run sass:debug && npm run sass:debug -- --watch",
     "styles:prod":   "npm run setup:styles && npm run sass -- --output-style compressed && npm run autoprefixer",
 
     "pages:prod":  "cp -R project/src/pages/. project/dist",
