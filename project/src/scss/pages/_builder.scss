@@ -1,0 +1,126 @@
+.spryt {
+  &-builder {
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: 100%;
+    height: 100%;
+
+    background: $main-bg;
+  }
+
+  &-menu {
+    flex: 50px 0 0;
+
+    background: $light-bg;
+  }
+
+  &-frames {
+    flex: 100px 0 0;
+
+    background: $light-bg;
+  }
+
+  &-main {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: auto 1 1;
+  }
+
+  @mixin drawer ($base-class, $drawer-width: 200px) {
+    position: relative;
+
+    flex: 0 0 0;
+
+    background: $main-bg;
+
+    transition: flex-basis $spd-main;
+
+    &--open {
+      flex: $drawer-width 0 0;
+    }
+
+    &__toggle {
+      @include font-copy;
+
+      position: absolute;
+      top: 0;
+
+      width: $drawer-width;
+      height: 50px;
+      padding: 0 20px;
+
+      line-height: 50px;
+      white-space: nowrap;
+      color: $dark-clr;
+
+      transition-property: transform, color;
+      transition-duration: $spd-main;
+
+      will-change: transform, color;
+
+      .spryt-#{$base-class}--open & {
+        color: $main-clr;
+      }
+    }
+  }
+
+  &-sheets {
+    $drawer-width: 200px;
+
+    @include drawer(sheets, $drawer-width);
+
+    &__toggle {
+      right: 0;
+      transform-origin: 0 100%;
+      transform: translateX(100%) translateY(calc(-100% + 50px)) rotate(90deg);
+
+      &::after {
+        content: 'Spryte sheets';
+      }
+
+      .spryt-sheets--open & {
+        transform: translateX(0%) translateY(0%) rotate(0deg);
+      }
+    }
+  }
+
+  &-animations {
+    $drawer-width: 200px;
+
+    @include drawer(animations, $drawer-width);
+
+    &__toggle {
+      left: 0;
+      transform-origin: 100% 100%;
+      transform: translateX(-100%) translateY(calc(-100% + 50px)) rotate(-90deg);
+
+      &::after {
+        content: 'Animations';
+      }
+
+      .spryt-animations--open & {
+        transform: translateX(0%) translateY(0%) rotate(-0deg);
+      }
+    }
+  }
+
+  &-board {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: auto 1 1;
+    align-items: center;
+    justify-content: center;
+
+    background: $dark-bg;
+
+    overflow: hidden;
+  }
+
+  &-canvas {
+    flex: auto 0 1;
+
+    background: white;
+  }
+
+}

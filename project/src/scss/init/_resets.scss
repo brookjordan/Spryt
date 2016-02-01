@@ -1,7 +1,6 @@
 *,
 *::before,
 *::after {
-  box-sizing:  border-box;
   font-size:   100%;
   font-weight: inherit;
   color:       inherit;
@@ -16,7 +15,7 @@ html {
 
 html, body,
 p, h1, h2, h3, h4, h5, h6,
-article, div, nav, section {
+article, div, nav, section, menu {
   display: block;
   margin:  0;
   padding: 0;
@@ -33,7 +32,7 @@ a {
 }
 
 input, button, select, option {
-  outline:0;
+  outline:    0;
   font:       inherit;
   padding:    0;
   background: none;
@@ -42,5 +41,4 @@ input, button, select, option {
 
 button {
   display:    block;
-  cursor:     pointer;
 }

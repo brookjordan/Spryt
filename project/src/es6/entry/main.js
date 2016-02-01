@@ -1,3 +1,7 @@
-import helloWorld from "../method/test.js";
+import drawerBuilder     from "../component/togglable.js";
+import filePickerBuilder from "../component/file-picker.js";
 
-helloWorld();
+drawerBuilder.init('spryt-sheets');
+drawerBuilder.init('spryt-animations');
+
+filePickerBuilder.init('spryt-map-picker');
