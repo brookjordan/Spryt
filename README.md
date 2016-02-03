@@ -9,7 +9,7 @@ Boilerplate npm project for creating a static website with SASS and ECMA6
 
 run:
 ```
-npm install --global webpack node-sass postcss autoprefixer watch
+npm install --global browserify node-sass postcss autoprefixer watch watchify
 npm install
 ```
 

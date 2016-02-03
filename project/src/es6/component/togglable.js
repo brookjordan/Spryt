@@ -2,7 +2,7 @@ const sprytSheets = {
   init: initialiseSpryteSheetDrawer,
 };
 
-module.exports = sprytSheets;
+export default sprytSheets;
 
 function initialiseSpryteSheetDrawer(drawerClass) {
   const drawer_elt = document.querySelector(`.${drawerClass}`);
