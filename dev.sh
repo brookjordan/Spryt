@@ -26,6 +26,7 @@ function tab () {
 EOF
 }
 
+npm run clean;
 npm run setup;
 tab "npm run pages:watch";
 tab "npm run styles:watch";

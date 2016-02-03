@@ -2,7 +2,7 @@ const startLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.spli
 const otherLetters = '0123456789---___'.split('');
 const allLetters   = startLetters.concat(otherLetters);
 
-export default length => {
+module.exports = length => {
   let str = '';
   for (let i = length; i > 0; --i) {
     str += str.length ?
