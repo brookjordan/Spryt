@@ -1,5 +1,5 @@
-const drawerBuilder     = require("../component/togglable.js");
-const filePickerBuilder = require("../component/file-picker.js");
+import drawerBuilder     from "../component/togglable.js";
+import filePickerBuilder from "../component/file-picker.js";
 
 drawerBuilder.init('spryt-sheets');
 drawerBuilder.init('spryt-animations');

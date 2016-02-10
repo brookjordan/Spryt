@@ -1,4 +1,4 @@
-const randomString = require('../method/randomString.js');
+import randomString from '../method/randomString.js';
 
 const sprytSheets = {
   init: initialiseFilePicker,
@@ -19,7 +19,7 @@ style.innerHTML = `
 style.setAttribute('id', `picker-styles-${filePickerClassName}`);
 document.head.insertBefore(style, document.head.firstChild);
 
-module.exports = sprytSheets;
+export default sprytSheets;
 
 function initialiseFilePicker(pickerClass) {
   const picker_elt       = document.querySelector(`.${pickerClass}`);
