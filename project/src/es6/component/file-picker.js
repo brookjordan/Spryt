@@ -7,13 +7,18 @@ const filePickerClassName = randomString(30);
 const style = document.createElement('style');
 style.innerHTML = `
   .${filePickerClassName} {
+    position: relative;
     overflow: hidden;
   }
 
   .${filePickerClassName}__input {
     position: absolute;
-    top: -9999px;
-    left: -9999px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
   }
 `;
 style.setAttribute('id', `picker-styles-${filePickerClassName}`);
@@ -27,7 +32,6 @@ function initialiseFilePicker(pickerClass) {
   const pickerLabel_elt  = document.createElement('span');
 
   pickerButton_elt.className = `${picker_elt.className} ${filePickerClassName}`;
-  pickerButton_elt.addEventListener('click', openPicker);
 
   picker_elt.className = `${filePickerClassName}__input`;
 
@@ -43,9 +47,4 @@ function initialiseFilePicker(pickerClass) {
     elt:    picker_elt,
     button: pickerButton_elt,
   };
-
-
-  function openPicker() {
-    picker_elt.click();
-  }
 }
